@@ -113,8 +113,6 @@ ul li span{
     height: 1.6rem;
     background-color: gainsboro;
     margin: 0 1rem 0 1.5rem;
-    position: relative;
-    z-index: 11;
     flex-shrink: 0;
 }
 ul li + li span:nth-of-type(1){
@@ -125,7 +123,6 @@ ul li:nth-last-of-type(1) p {
     word-break: break-all;
     padding: 0 .5rem;
     box-sizing: border-box;
-    position: relative;
 
 }
 ul li + li span:nth-of-type(2){
