@@ -354,11 +354,17 @@ nav span:nth-of-type(1) {
   nav span:nth-of-type(1) a:nth-of-type(2) {
     color: #1db176; }
 nav span:nth-of-type(2) {
+  position: relative;
+  font-size: .14rem;
   display: block;
   color: #adadad;
-  padding: .1rem 0;
+  padding: .1rem .4rem;
   border-top: 1px solid   #c6c6c6;
   border-bottom: 1px solid #dcdcdc; }
+  nav span:nth-of-type(2) > span {
+    position: absolute;
+    top: 0rem;
+    left: 0; }
   nav span:nth-of-type(2) a {
     display: inline-block;
     margin: .1rem  .1rem; }
