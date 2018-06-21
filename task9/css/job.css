@@ -634,7 +634,7 @@ main h4 {
     align-items: flex-start; }
     footer .footer-right div {
       margin-bottom: 0; } }
-@media all and (min-width: 768px) and (max-width: 992px) {
+@media all and (min-width: 769px) and (max-width: 991px) {
   .how .row div:nth-of-type(even) img {
     display: none; }
 
