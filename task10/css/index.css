@@ -129,7 +129,6 @@ header {
 
 .nav-btngroup--folded {
   position: relative;
-  display: block;
   z-index: 1;
   margin-top: -1.6rem;
   transition: all 300ms ease-in; }
@@ -555,6 +554,9 @@ footer {
     footer .footer-right > div {
       display: flex;
       flex-direction: row-reverse; } }
+@media all and (min-width: 440px) {
+  #nav_checkbox--none:checked ~ .nav-btngroup--folded {
+    display: none; } }
 @media all and (max-width: 440px) {
   main .container .Progress {
     height: .5rem; }
@@ -568,14 +570,13 @@ footer {
     justify-content: flex-end; }
 
   nav.container .nav-btngroup--folded {
-    margin-bottom: .1rem; }
+    margin-bottom: .1rem;
+    transition: all 500ms ease; }
 
   nav .container .nav_button--label {
     display: flex; }
 
   nav .container .nav-btngroup--expand {
-    display: none;
-    padding-top: .06rem;
-    align-items: flex-start; } }
+    display: none; } }
 
 /*# sourceMappingURL=index.css.map */

@@ -104,8 +104,13 @@
       }
     }
   }
-}
 
+}
+@media all and (min-width: 440px){
+  #nav_checkbox--none:checked ~.nav-btngroup--folded{
+    display: none;
+  }
+}
 @media all and(max-width: 440px) {
   main .container .Progress{
     height: .5rem;
@@ -122,6 +127,8 @@
 
 nav.container .nav-btngroup--folded{
   margin-bottom: .1rem;
+  transition: all 500ms ease;
+
 
 }
   nav .container .nav_button--label{
@@ -129,8 +136,7 @@ nav.container .nav-btngroup--folded{
   }
   nav .container .nav-btngroup--expand{
     display: none;
-    padding-top: .06rem;
-    align-items: flex-start;
+
   }
 
 
