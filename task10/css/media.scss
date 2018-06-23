@@ -93,6 +93,17 @@
       }
     }
   }
+  footer{
+    .footer-right{
+      display: flex;
+      justify-content: flex-start;
+      >div{
+        display: flex;
+        flex-direction: row-reverse;
+
+      }
+    }
+  }
 }
 
 @media all and(max-width: 440px) {
@@ -109,17 +120,18 @@
     justify-content: flex-end;
   }
 
-  nav .container >div button{
-    width: .3rem;
-    writing-mode: tb;
-    -ms-writing-mode: tb-lr;
+nav.container .nav-btngroup--folded{
+  margin-bottom: .1rem;
+
+}
+  nav .container .nav_button--label{
+    display: flex;
   }
-  nav{
-    height: 1rem;
-  }
-  nav .container >div{
+  nav .container .nav-btngroup--expand{
+    display: none;
     padding-top: .06rem;
     align-items: flex-start;
   }
+
 
 }

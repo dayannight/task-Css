@@ -108,6 +108,8 @@ html {
   font-size: 625%; }
 
 header {
+  position: relative;
+  z-index: 2;
   background-color: #1277dc;
   color: white;
   height: .4rem; }
@@ -125,16 +127,58 @@ header {
         background-color: white;
         color: black; }
 
+.nav-btngroup--folded {
+  position: relative;
+  display: block;
+  z-index: 1;
+  margin-top: -1.6rem;
+  transition: all 300ms ease-in; }
+  .nav-btngroup--folded button {
+    width: 100%;
+    background-color: white;
+    color: black;
+    height: .3rem;
+    box-shadow: 1px 1px 1px #d5d5d5;
+    border-radius: 3px;
+    margin: .05rem 0; }
+    .nav-btngroup--folded button:hover {
+      background-color: #1277dc;
+      color: white; }
+
+#nav_checkbox--none:checked ~ .nav-btngroup--folded {
+  display: block;
+  margin-top: .6rem;
+  transition: 500ms ease; }
+
+.nav_button--label {
+  z-index: 2;
+  position: absolute;
+  right: .2rem;
+  top: .3rem;
+  display: none;
+  width: .3rem;
+  height: .2rem;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-between; }
+  .nav_button--label > div {
+    width: 100%;
+    height: .04rem;
+    border-radius: 2px;
+    background-color: #1277dc; }
+
 nav {
+  position: relative;
   background-color: #f9f9f9;
-  height: .8rem; }
-  nav div {
-    height: 100%; }
-  nav > div > div {
+  min-height: .8rem; }
+  nav .container {
+    min-height: .8rem; }
+  nav > div .nav-btngroup--expand {
+    min-height: .8rem;
     display: flex;
     justify-content: flex-end;
     align-items: center; }
-    nav > div > div button {
+    nav > div .nav-btngroup--expand button {
       margin-left: .2rem;
       padding: .05rem .1rem;
       background-color: white;
@@ -402,7 +446,8 @@ main #checkbox1:checked ~ .Dropdown ul, main #checkbox2:checked ~ .Dropdown ul {
     border: none;
     outline: none;
     -webkit-appearance: none;
-    -moz-appearance: none; }
+    -moz-appearance: none;
+    text-align: center; }
     .select-style select::-ms-expand {
       display: none; }
     .select-style select option {
@@ -422,13 +467,13 @@ footer {
       word-break: keep-all;
       flex-basis: 33%;
       color: #afafaf; }
-  footer .footer-right {
+  footer .footer-right > div {
     display: flex; }
-    footer .footer-right > div {
-      padding: 5px 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between; }
+  footer .footer-right > div > div {
+    padding: 5px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; }
   footer .container > div {
     min-height: 1.5rem;
     display: flex;
@@ -502,7 +547,14 @@ footer {
     footer .container > div .footer-mid {
       margin: .1rem 0; }
       footer .container > div .footer-mid a {
-        text-align: left; } }
+        text-align: left; }
+
+  footer .footer-right {
+    display: flex;
+    justify-content: flex-start; }
+    footer .footer-right > div {
+      display: flex;
+      flex-direction: row-reverse; } }
 @media all and (max-width: 440px) {
   main .container .Progress {
     height: .5rem; }
@@ -515,15 +567,14 @@ footer {
   header .container > div {
     justify-content: flex-end; }
 
-  nav .container > div button {
-    width: .3rem;
-    writing-mode: tb;
-    -ms-writing-mode: tb-lr; }
+  nav.container .nav-btngroup--folded {
+    margin-bottom: .1rem; }
 
-  nav {
-    height: 1rem; }
+  nav .container .nav_button--label {
+    display: flex; }
 
-  nav .container > div {
+  nav .container .nav-btngroup--expand {
+    display: none;
     padding-top: .06rem;
     align-items: flex-start; } }
 
