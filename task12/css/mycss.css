@@ -36,7 +36,8 @@ input, select, textarea, button {
 button {
   border: 0 none;
   background-color: transparent;
-  cursor: pointer; }
+  cursor: pointer;
+  outline: none; }
 
 /* 重置表单button按钮效果 */
 body {
@@ -410,12 +411,19 @@ footer {
       width: .3rem;
       margin-bottom: .05rem; }
   footer a:nth-of-type(2) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: .5rem;
     height: .5rem;
     background: #5ac0ce;
     border-radius: 50%; }
     footer a:nth-of-type(2) img {
-      transform: scale(0.7) translate(0.09rem, 0.03rem); }
+      width: .3rem;
+      height: .3rem;
+      position: relative;
+      bottom: .02rem;
+      left: .02rem; }
   footer a:nth-of-type(3) {
     display: flex;
     flex-direction: column;

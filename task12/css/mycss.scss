@@ -323,12 +323,17 @@ footer{
     }
   }
   a:nth-of-type(2){
+    @include flex-all-center;
     width: .5rem;
     height: .5rem;
     background: #5ac0ce;
     border-radius: 50%;
     img{
-      transform: scale(.7) translate(.09rem,.03rem);
+      width: .3rem;
+      height: .3rem;
+      position: relative;
+      bottom:.02rem;
+      left: .02rem;
     }
   }
   a:nth-of-type(3){
