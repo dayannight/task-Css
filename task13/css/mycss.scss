@@ -3,25 +3,47 @@
 html{
   font-size:625%;
   font-family: STHeiti,"Microsoft Yahei",Arial,SimSun;
+  background: white;
+}
+.white{
+  background: #f0f0f0;
 }
 body{
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: 640px;
   position: relative;
   padding-top: 1.55rem;
   padding-bottom: .8rem;
   font-size: .14rem;
   overflow-x: hidden;
-  background-color: #29bde0;
+  @extend .blue;
+}
+.body_box--container{
+  height: 100%;
+  background: #f0f0f0;
+  padding: .5rem .2rem;
+  position: relative;
+  overflow-x: hidden;
 }
 main{
   transition: 500ms ease;
 
 
+
 }
 *{  letter-spacing: .1em;}
 header{
+  box-sizing: border-box;
   z-index: 99;
   @include flex-between-center;
   @include position-fixed-top;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 640px;
+  min-width: 320px;
   height: .5rem;
   padding: 0 .15rem;
   color: white;
@@ -40,10 +62,11 @@ header{
 
 #nav-checkbox:checked ~ nav{
   margin-left: 0;
+  opacity: 1;
   transition: 500ms ease;
 }
 #nav-checkbox:checked ~ .index-main{
-  transform: translateX(70vw);
+  transform: translateX(calc(70% + .2rem));
   transition: 500ms ease;
 }
 
@@ -88,14 +111,14 @@ header{
 
 
 nav{
-  position: fixed;
+  position: absolute;
   top:.5rem;
   bottom: 0;
   left: 0;
-  width:70vw;
+  width:calc(70%);
   background:white;
-  margin-left: -70vw;
-  transition: 500ms ease;
+  margin-left: calc(-70% - .2rem);
+  transition: margin 500ms ease;
   box-shadow: #dddddd -5px -5px 30px 1px inset  ;
   li{
     position: relative;
@@ -155,10 +178,16 @@ nav{
   }
 }
 .tip{
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 640px;
+  min-width: 320px;
   z-index: 99;
-  @include position-fixed-top;
+  position:fixed;
+  top:.5rem;
+  left: 50%;
+  transform: translateX(-50%);
   @include flex-between-center;
-  top: .5rem;
   padding: 0 .15rem 0 .4rem;
   height: .5rem;
   color: black;
@@ -184,11 +213,17 @@ nav{
   }
 }
 .tip--bottom{//提醒下部分
+  box-sizing: border-box;
   z-index: 99;
-  @include position-fixed-top;
+  position:fixed;
+  max-width: 640px;
+  min-width: 320px;
+  width: 100%;
+  left: 50%;
   top:1rem;
   padding: .15rem 0 .2rem .4rem;
-  height: .2rem;
+  height: .55rem;
+  transform: translateX(-50%);
   background: #29bde0;
   color: white;
   &::before{
@@ -206,6 +241,10 @@ nav{
 }
 main{
   width: 100%;
+}
+.blue{
+  background: #29bde0;
+
 }
 .block--wrap--size{//block定位wrap
   z-index: 1;
@@ -250,14 +289,14 @@ main{
       @include flex-all-center;
       width: 100%;
       height: 70%;
-      font-size: 5vw;
+      font-size: .2rem;
       background: #f5c97b;
     }
     div:nth-of-type(2){//号码
       @include flex-all-center;
       width: 100%;
       height: 30%;
-      font-size: 4vw;
+      font-size: .14rem;
       color: white;
       background:#83b09a;
     }
@@ -272,7 +311,13 @@ main{
 .vote-footer{//投票页面脚部
   z-index: 99;
   @include flex-all-center;
-  @include position-fixed-bottom;
+  position:fixed;
+  bottom: 0;
+  left: 50%;
+  width: 100%;
+  max-width: 640px;
+  min-width: 320px;
+  transform: translateX(-50%);
   height: .8rem;
   background: #29bde0;
   .go-die{
@@ -283,12 +328,16 @@ main{
     background: #fbb435;
   }
 }
-
+.clear--padding{
+  padding: 0;
+}
 //----------以下index页面-------//
+main{
+  margin: 0 auto;
+}
 .index-body{
-  background: #f0f0f0;
   font-size: .18rem;
-  padding:.5rem .2rem;
+  padding-top:0 ;
 }
 .history{//上次游戏记录
   position: relative;
@@ -445,6 +494,11 @@ main{
   @include flex-vertical-center;
   @include position-fixed-bottom;
   height: .8rem;
+  left: 50%;
+  width: 100%;
+  max-width: 640px;
+  min-width: 320px;
+  transform: translateX(-50%);
   background: rgba(4,189,224,0.3);
   color: #314549;
   button{
